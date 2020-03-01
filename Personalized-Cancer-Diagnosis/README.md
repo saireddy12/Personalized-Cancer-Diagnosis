@@ -1,5 +1,5 @@
-<p style="font-size:36px;text-align:center"> <b>Personalized cancer diagnosis</b> </p>
-## About Cancer
+<h1> <b>Personalized cancer diagnosis</b> </h1>
+<h2> About Cancer </h2>
 
 __Causes__
 Cancer is caused by changes (mutations) to the DNA within cells. The DNA inside a cell is packaged into a large number of individual genes, each of which contains a set of instructions telling the cell what functions to perform, as well as how to grow and divide. Errors in the instructions can cause the cell to stop its normal function and may allow a cell to become cancerous.
