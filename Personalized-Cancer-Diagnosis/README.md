@@ -1,9 +1,10 @@
----------------------------------More About cancer---------------------------
+<p style="font-size:36px;text-align:center"> <b>Personalized cancer diagnosis</b> </p>
+## About Cancer
 
-Causes
+__Causes__
 Cancer is caused by changes (mutations) to the DNA within cells. The DNA inside a cell is packaged into a large number of individual genes, each of which contains a set of instructions telling the cell what functions to perform, as well as how to grow and divide. Errors in the instructions can cause the cell to stop its normal function and may allow a cell to become cancerous.
 
-What do gene mutations do?
+__What do gene mutations do?__
 A gene mutation can instruct a healthy cell to:
 
 Allow rapid growth. A gene mutation can tell a cell to grow and divide more rapidly. This creates many new cells that all have that same mutation.
@@ -11,14 +12,14 @@ Fail to stop uncontrolled cell growth. Normal cells know when to stop growing so
 Make mistakes when repairing DNA errors. DNA repair genes look for errors in a cell's DNA and make corrections. A mutation in a DNA repair gene may mean that other errors aren't corrected, leading cells to become cancerous.
 These mutations are the most common ones found in cancer. But many other gene mutations can contribute to causing cancer.
 
-What causes gene mutations?
+__What causes gene mutations?__
 Gene mutations can occur for several reasons, for instance:
 
 Gene mutations you're born with. You may be born with a genetic mutation that you inherited from your parents. This type of mutation accounts for a small percentage of cancers.
 Gene mutations that occur after birth. Most gene mutations occur after you're born and aren't inherited. A number of forces can cause gene mutations, such as smoking, radiation, viruses, cancer-causing chemicals (carcinogens), obesity, hormones, chronic inflammation and a lack of exercise.
 Gene mutations occur frequently during normal cell growth. However, cells contain a mechanism that recognizes when a mistake occurs and repairs the mistake. Occasionally, a mistake is missed. This could cause a cell to become cancerous.
 
-How do gene mutations interact with each other?
+__How do gene mutations interact with each other?__
 The gene mutations you're born with and those that you acquire throughout your life work together to cause cancer.
 
 For instance, if you've inherited a genetic mutation that predisposes you to cancer, that doesn't mean you're certain to get cancer. Instead, you may need one or more other gene mutations to cause cancer. Your inherited gene mutation could make you more likely than other people to develop cancer when exposed to a certain cancer-causing substance.
@@ -29,21 +30,18 @@ https://www.mayoclinic.org/diseases-conditions/cancer/symptoms-causes/syc-203705
 
 
 
+## Business Problem
+#### Description
 
-Business Problem
-Description
+<p> Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment/ </p>
+<p> Data: Memorial Sloan Kettering Cancer Center (MSKCC)</p>
+<p> Download training_variants.zip and training_text.zip from Kaggle.</p> 
 
-Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment/
+<h6> Context:</h6>
+<p> Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment/discussion/35336#198462</p>
 
-Data: Memorial Sloan Kettering Cancer Center (MSKCC)
-
-Download training_variants.zip and training_text.zip from Kaggle.
-
-Context:
-Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment/discussion/35336#198462
-
-Problem statement : 
-Classify the given genetic variations/mutations based on evidence from text-based clinical literature.
+<h6> Problem statement : </h6>
+<p> Classify the given genetic variations/mutations based on evidence from text-based clinical literature. </p>
 
 Source/Useful Links
 Some articles and reference blogs about the problem statement
@@ -51,33 +49,47 @@ Some articles and reference blogs about the problem statement
 https://www.forbes.com/sites/matthewherper/2017/06/03/a-new-cancer-drug-helped-almost-everyone-who-took-it-almost-heres-what-it-teaches-us/#2a44ee2f6b25
 https://www.youtube.com/watch?v=UwbuW7oK8rk
 https://www.youtube.com/watch?v=qxXRKVompI8
-Real-world/Business objectives and constraints.
-No low-latency requirement.
-Interpretability is important.
-Errors can be very costly.
-Probability of a data-point belonging to each class is needed.
-Machine Learning Problem Formulation
-Data
-Data Overview
-Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment/data
-We have two data files: one conatins the information about the genetic mutations and the other contains the clinical evidence (text) that human experts/pathologists use to classify the genetic mutations.
-Both these data files are have a common column called ID
+
+## Real-world/Business objectives and constraints.
+* No low-latency requirement.
+* Interpretability is important.
+* Errors can be very costly.
+* Probability of a data-point belonging to each class is needed.
+
+### Machine Learning Problem Formulation
+#### Data Overview
+- Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment/data
+- We have two data files: one conatins the information about the genetic mutations and the other contains the clinical evidence (text) that  human experts/pathologists use to classify the genetic mutations. 
+- Both these data files are have a common column called ID
+- <p> 
+    Data file's information:
+    <ul> 
+        <li>
+        training_variants (ID , Gene, Variations, Class)
+        </li>
+        <li>
+        training_text (ID, Text)
+        </li>
+    </ul>
+</p>
 
 
-
-Mapping the real-world problem to an ML problem
-Type of Machine Learning Problem
+## Mapping the real-world problem to an ML problem
+#### Type of Machine Learning Problem
         There are nine different classes a genetic mutation can be classified into => Multi class classification problem
-Performance Metric
+### Performance Metric
 Source: https://www.kaggle.com/c/msk-redefining-cancer-treatment#evaluation
 
-Metric(s):
+__Metric(s):__ 
+* Multi class log-loss 
+* Confusion matrix 
 
-Multi class log-loss
-Confusion matrix
-Machine Learing Objectives and Constraints
-Objective: Predict the probability of each data-point belonging to each of the nine classes.
-
-Constraints:
-
-* Interpretability * Class probabilities are needed. * Penalize the errors in class probabilites => Metric is Log-loss. * No Latency constraints.
+### Machine Learing Objectives and Constraints
+<p> Objective: Predict the probability of each data-point belonging to each of the nine classes.
+</p>
+<p> Constraints:
+</p>
+* Interpretability
+* Class probabilities are needed.
+* Penalize the errors in class probabilites => Metric is Log-loss.
+* No Latency constraints.
